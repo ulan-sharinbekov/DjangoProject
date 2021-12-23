@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    {% for footbalers in footbal %}
+    <li style="color: green">
+        {{footbalers.firstname}}
+        {{footbalers.surename}}
+        {{footbalers.age}}
+        {{footbalers.club}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

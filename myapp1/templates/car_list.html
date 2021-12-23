@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<ul>
+    {%if cars|length < 3 %}
+        {%for car in cars%}
+        <li style = "color:red">
+            {{car.brand}}
+            <br>
+            {{car.year}}
+            {{car.type}}
+            {{car.color}}
+        </li>
+        {% endfor %}
+    {%elif cars|length >= 3%}
+        {%for car in cars%}
+        <li style = "color:green">
+            {{car.brand}}
+            {{car.year}}
+        </li>
+    {% endfor %}
+    {% endif %}
+</ul>
+
+<img src="{{картинка.jpg}}" alt="{{АААА}}">
+
+<p style="color:red;"> This is a red paragraph.</p>
+
+<p style="color:yellow;">
+This paragraph
+contains         a lot of spaces
+in the source         code,
+but the        browser
+ignores it.
+</p>
+
+<h1>This is heading 1</h1>
+<p>This is some text.</p>
+<hr>
+<h2>This is heading 2</h2>
+<p>This is some other text.</p>
+<hr>
+
+
+<p style=" background-color:powderblue;" >
+  My Bonnie lies over the ocean.
+  <br>
+  My Bonnie lies over the sea.
+   <br>
+  My Bonnie lies over the ocean.
+<br>
+  Oh, bring back my Bonnie to me.
+</p>
+
+
+<h1 style="background-color:powderblue;">This is a heading</h1>
+<p style="background-color:tomato;">This is a paragraph.</p>
+
+
+
+
+<p>Here is a quote from WWF's website:</p>
+<blockquote>
+For 50 years, WWF has been protecting the future of nature.
+The world's leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+ close to 5 million globally.
+</blockquote>
+{% endblock %}

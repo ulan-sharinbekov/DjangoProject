@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    {% for club in clubs %}
+    <li style="color: red">
+        {{club.title}}
+        {{club.country}}
+        {{club.year}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

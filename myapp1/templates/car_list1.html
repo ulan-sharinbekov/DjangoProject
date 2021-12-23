@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+
+        {% for car in cars %}
+        <li style="color: red">
+            {{car.brand.name}}
+            {{car.title}}
+            {{car.brand.country}}
+            {{car.type}}
+            {{car.color}}
+        </li>
+        {% endfor %}
+
+</ul>
+<!--{{cars.0.brand}}-->
+{% endblock %}
