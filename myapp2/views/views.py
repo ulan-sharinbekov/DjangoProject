@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from myapp2.models import Club, Footballer
 import json
 from myapp2.forms import addClubForm, addFootballerForm
+from myapp2.testForms import NewForms, ContactForm
 
 # Create your views here.
 def addClub(request):
@@ -51,3 +52,31 @@ def get_Footballer(request):
         "title": "Вторая страница",
         "footbal": footbal
     })
+
+def get_name(request):
+    if request.method == 'POST':
+        form = NewForms(request.POST)
+
+        if form.is_valid():
+            return HttpResponse('/thanks/')
+
+    else:
+        form = NewForms()
+
+    return render(request, 'name.html', {'form': form})
+
+
+def get_Contact(request):
+    if request.method == 'POST':
+        print("postt")
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+
+            return HttpResponse('/thanks/')
+
+    else:
+        print("gett")
+        form = ContactForm()
+
+    return render(request, 'name.html', {'form': form})

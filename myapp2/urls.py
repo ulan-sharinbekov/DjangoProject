@@ -1,5 +1,5 @@
 from django.urls import path
-from myapp2.views.views import addClub, addFootballer, get_Club, get_Footballer
+from myapp2.views.views import addClub, addFootballer, get_Club, get_Footballer, get_name, get_Contact
 
 #from myapp2.views.views import Clu
 from .views.cbv import Club, Footballer
@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('club', get_Club),
     path('footbal', get_Footballer),
+    path('newForm', get_name),
+    path('contact',get_Contact),
 
 
 
