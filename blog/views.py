@@ -6,7 +6,11 @@ from django.urls import reverse_lazy
 from .models import *
 from .forms import *
 
-
+menu = [{'title': "О сайте", 'url_name': 'about'},
+        {'title': "Добавить статью", 'url_name': 'add_page'},
+        {'title': "Обратная связь", 'url_name': 'contact'},
+        {'title': "Войти", 'url_name': 'login'}
+]
 #//////-----------------------------------------------------------------------------------------
 ##в место функции используем классы представлении "CBV CLASS BASIC VIEW"
 ## 1 блок
