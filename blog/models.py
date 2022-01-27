@@ -20,7 +20,7 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'Известные женьшины'
         verbose_name_plural = 'Известные женьшины'
-        ordering = ['time_create', 'title']
+        ordering = ['id']
 
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name = 'Категория')
