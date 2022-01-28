@@ -1,6 +1,8 @@
 from django import forms
 from .models import *
 from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 ## формы связанные с моделю
 class AddPostForm(forms.ModelForm):
@@ -29,3 +31,15 @@ class AddPostForm(forms.ModelForm):
     #content = forms.CharField(widget=forms.Textarea(attrs={'cols':60, 'rows':10}), label="Контент")
     #is_published = forms.BooleanField(label="Публикация", required=False, initial=True)
     #cat = forms.ModelChoiceField(queryset=Category.objects.all(), label="Категория", empty_label="Категория не выбрана")
+
+
+
+class RegisterUserForm(UserCreationForm):
+    username = forms.CharField(label="логин", widget=forms.TextInput(attrs={'class':'form-input'}))
+    password1 = forms.CharField(label="пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password2 = forms.CharField(label="повтор пароля", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    email = forms.CharField(label="Е-mail", widget=forms.EmailInput(attrs={'class': 'form-input'}))
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2', 'email')
