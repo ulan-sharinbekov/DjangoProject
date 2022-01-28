@@ -1,7 +1,7 @@
 from django import forms
 from .models import *
 from django.core.exceptions import ValidationError
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 ## формы связанные с моделю
@@ -43,3 +43,12 @@ class RegisterUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'password1', 'password2', 'email')
+
+
+class LoginUserForm(AuthenticationForm):
+    username = forms.CharField(label="логин", widget=forms.TextInput(attrs={'class':'form-input'}))
+    password = forms.CharField(label="пароль", widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+
+
+
+

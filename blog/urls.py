@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib import admin
-from .views import about,  contact, login,  BlogHome, BlogCategory, ShowPost, AddPage, RegisterUser
-#index, show_category, show_post, addpage,
+from .views import about,  contact,   BlogHome, BlogCategory, ShowPost, AddPage, RegisterUser, LoginUser, logout_user
+#index, show_category, show_post, addpage,login,
 
 urlpatterns = [
 
@@ -11,7 +11,8 @@ urlpatterns = [
     #path('addpage/', addpage, name='add_page'),
     path('addpage/', AddPage.as_view(), name='add_page'),
     path('contact/', contact, name='contact'),
-    path('login/', login, name='login'),
+    path('login/', LoginUser.as_view(), name='login'),
+    path('logout/', logout_user, name='logout'),
     path('register/', RegisterUser.as_view(), name='register'),
     #path('post/<slug:post_slug>/', show_post, name='post'),
     path('post/<slug:post_slug>/', ShowPost.as_view(), name='post'),
